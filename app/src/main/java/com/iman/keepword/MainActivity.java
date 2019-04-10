@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.iman.keepword.dialog.TimeoutDialog;
 import com.iman.keepword.model.User;
 import com.iman.keepword.rest.SignUp;
 
@@ -85,6 +86,6 @@ public class MainActivity extends AppCompatActivity implements Callback<User> {
 
     @Override
     public void onFailure(Call<User> call, Throwable t) {
-        String s = "";
+        new TimeoutDialog(this,TimeoutDialog.ERROR,t.getMessage());
     }
 }

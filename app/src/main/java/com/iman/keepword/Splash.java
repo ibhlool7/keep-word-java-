@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.iman.keepword.dialog.TimeoutDialog;
 import com.iman.keepword.model.Log;
 import com.iman.keepword.rest.SignUp;
 
@@ -76,9 +77,9 @@ public class Splash extends AppCompatActivity implements Callback<Log> {
     private void sendRequest() {
         Gson gson = new GsonBuilder().setLenient().create();
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
-                .connectTimeout(120, TimeUnit.SECONDS)
-                .readTimeout(120, TimeUnit.SECONDS)
-                .writeTimeout(120, TimeUnit.SECONDS)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
                 .build();
         Retrofit retrofit = new Retrofit.Builder().baseUrl(Setting.BASEURL).
                 addConverterFactory(GsonConverterFactory.create(gson))
@@ -104,8 +105,8 @@ public class Splash extends AppCompatActivity implements Callback<Log> {
 
     @Override
     public void onFailure(Call<Log> call, Throwable t) {
-        nextStep(false, t.getMessage());
-    }
+//        nextStep(false, t.getMessage());
+        new TimeoutDialog(this,TimeoutDialog.ERROR,t.getMessage());    }
 
     private void nextStep(final boolean b, final String message) {
         CountDownTimer countDownTimer = new CountDownTimer(2000, 2000) {
