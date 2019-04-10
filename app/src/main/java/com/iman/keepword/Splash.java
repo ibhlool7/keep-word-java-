@@ -35,7 +35,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Splash extends AppCompatActivity implements Callback<Log> {
 
     private ImageView logo;
-    static String baseUrl = "http://192.168.1.71:8080/";
     private ImageView top;
 
 
@@ -81,7 +80,7 @@ public class Splash extends AppCompatActivity implements Callback<Log> {
                 .readTimeout(120, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)
                 .build();
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(Setting.BASEURL).
                 addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)
                 .build();

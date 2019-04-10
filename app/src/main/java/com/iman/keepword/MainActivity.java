@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements Callback<User> {
 
     private Retrofit retrofit;
 
-    static String baseUrl = "http://192.168.1.71:8080/";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements Callback<User> {
                 .build();
 
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(Setting.BASEURL).
                 addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)
                 .build();

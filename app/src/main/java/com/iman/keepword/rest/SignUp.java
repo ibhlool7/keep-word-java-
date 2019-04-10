@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 
 
 public interface SignUp {
+
     @POST("signup")
     Call<User> getUser (@Body User user);
 
