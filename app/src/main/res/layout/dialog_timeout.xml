@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+<android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -89,7 +93,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/l2Center"
-                android:layout_margin="15dp"/>
+                android:layout_margin="25dp"/>
             <android.support.constraint.Guideline
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,3 +144,5 @@
 
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

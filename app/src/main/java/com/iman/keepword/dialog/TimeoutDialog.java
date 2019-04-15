@@ -15,7 +15,7 @@ import com.iman.keepword.R;
 public class TimeoutDialog {
 
     public final static int ERROR = 0;
-    public final static int CHOICE = 0;
+    public final static int CHOICE = 1;
 
     private Button ok, rOk, lCancel;
     private TextView message;
@@ -38,23 +38,23 @@ public class TimeoutDialog {
 
 
     private void init() {
-//        ok = view.findViewById(R.id.ok);
-//        rOk = view.findViewById(R.id.rOk);
-//        lCancel = view.findViewById(R.id.lCancel);
-//        message = view.findViewById(R.id.message);
-//
-//        if (type == ERROR) {
-//            ok.setVisibility(View.VISIBLE);
-//            ok.setText("OK");
-//            message.setText(messageText);
-//        }
-//        ok.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                activity.finish();
-//                dis();
-//            }
-//        });
+        ok = view.findViewById(R.id.ok);
+        rOk = view.findViewById(R.id.rOk);
+        lCancel = view.findViewById(R.id.lCancel);
+        message = view.findViewById(R.id.message);
+
+        if (type == ERROR) {
+            ok.setVisibility(View.VISIBLE);
+            ok.setText("OK");
+            message.setText(messageText);
+        }
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+                dis();
+            }
+        });
 
         alertDialogBuilder.requestWindowFeature(Window.FEATURE_NO_TITLE);
         alertDialogBuilder.setContentView(view);
@@ -63,7 +63,7 @@ public class TimeoutDialog {
         alertDialogBuilder.show();
     }
 
-    public void dis() {
+    void dis() {
         alertDialogBuilder.dismiss();
     }
 
