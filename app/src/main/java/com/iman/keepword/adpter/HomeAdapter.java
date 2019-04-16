@@ -1,6 +1,7 @@
 package com.iman.keepword.adpter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -32,8 +33,16 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomeHolder homeHolder, int i) {
-        homeHolder.text.setText(list.get(i));
+    public void onBindViewHolder(@NonNull HomeHolder homeHolder, final int position) {
+        homeHolder.text.setText(list.get(position));
+        homeHolder.logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (position == 0){
+                    Intent intent = new Intent(activity,null);
+                }
+            }
+        });
     }
 
     @Override
@@ -44,7 +53,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeHolder> {
     class HomeHolder extends RecyclerView.ViewHolder {
         ImageView logo;
         TextView text;
-        public HomeHolder(@NonNull View itemView) {
+        HomeHolder(@NonNull View itemView) {
             super(itemView);
             text = itemView.findViewById(R.id.text);
             logo = itemView.findViewById(R.id.logo);
