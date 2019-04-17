@@ -11,19 +11,152 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="?android:actionBarSize"
-                android:background="">
-            </LinearLayout>
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/lightOrange"
+                android:id="@+id/header">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:id="@+id/back"
+                    android:src="@drawable/back"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Add Word"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
                 android:scaleType="fitXY"
+                android:id="@+id/image"
+                app:layout_constraintTop_toBottomOf="@id/header"
                 android:background="@drawable/dialog_top"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_glassy"
+                app:layout_constraintBottom_toBottomOf="@id/image"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/wr"
+                android:layout_marginLeft="30dp"
+                android:padding="12dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:id="@+id/word"
+                    android:hint="word"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_glassy"
+                app:layout_constraintTop_toBottomOf="@+id/image"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/dr"
+                android:layout_marginLeft="30dp"
+                android:padding="12dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:hint="definition"
+                    android:id="@+id/definition"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/cream"
+                    android:background="@color/transparent"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:background="@drawable/black_glassy"
+                app:layout_constraintTop_toBottomOf="@+id/dr"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/er"
+                android:layout_marginLeft="30dp"
+                android:padding="12dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:hint="examples"
+                    android:id="@+id/examples"
+                    android:gravity="left|top"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/cream"
+                    android:background="@color/transparent"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/black_glassy"
+                app:layout_constraintTop_toBottomOf="@+id/er"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/nr"
+                android:layout_marginLeft="30dp"
+                android:padding="12dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:hint="in native"
+                    android:gravity="center"
+                    android:id="@+id/nativeLanguage"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/cream"
+                    android:background="@color/transparent"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/orange_button"
+                app:layout_constraintTop_toBottomOf="@+id/nr"
+                android:layout_marginTop="40dp"
+                android:id="@+id/save"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="SAVE"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/cream"
+                    android:background="@color/transparent"
+                    />
+            </RelativeLayout>
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
+
+
 
 </android.support.constraint.ConstraintLayout>

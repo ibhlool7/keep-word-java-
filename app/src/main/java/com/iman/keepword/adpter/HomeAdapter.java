@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.iman.keepword.AddWordActivity;
 import com.iman.keepword.R;
 
 import java.util.ArrayList;
@@ -39,7 +40,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeHolder> {
             @Override
             public void onClick(View view) {
                 if (position == 0){
-                    Intent intent = new Intent(activity,null);
+                    Intent intent = new Intent(activity, AddWordActivity.class);
+                    activity.startActivity(intent);
                 }
             }
         });

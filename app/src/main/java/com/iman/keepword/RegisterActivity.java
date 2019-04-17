@@ -79,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity implements Callback<User
 
     private void initialize() {
 
-        sharedPreferences = getSharedPreferences("keepWord",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(Setting.SHARENAME,MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
         signUpButton.setOnClickListener(new View.OnClickListener() {

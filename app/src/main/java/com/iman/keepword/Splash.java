@@ -86,7 +86,8 @@ public class Splash extends AppCompatActivity implements Callback<Log> {
                 .client(okHttpClient)
                 .build();
         SignUp signUp = retrofit.create(SignUp.class);
-        Call<Log> logCall = signUp.enter(new Log(Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID)));
+        Call<Log> logCall = signUp.enter(new Log(Settings.Secure.getString(getContentResolver(),
+                Settings.Secure.ANDROID_ID)));
         logCall.enqueue(this);
     }
 
